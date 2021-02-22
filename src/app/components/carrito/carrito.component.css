@@ -10,7 +10,7 @@
 
  /* !important is needed sometimes */
  ::-webkit-scrollbar {
-  width: 12px !important;
+  width: 40px !important;
 }
 
 /* Track */
