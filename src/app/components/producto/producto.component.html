@@ -1,0 +1,20 @@
+<div class="container">
+  <div class=" row mb-2 mt-2" >
+    <div class="image-container col-12 col-sm-12 col-lg-6">
+      <img class="card-img-top" [src]="producto.src" alt="" style="max-width: 20rem;">
+    </div>
+    <div class="card-body col-12 col-sm-12 col-lg-6">
+
+      <h4 class="card-text" style="font-weight: 600; font-size: 2rem; ">{{producto.name}}</h4>
+
+      <hr>
+
+      <span style="color: white; font-size: 0.9rem;" class="badge bg-info">Precio por unidad ${{producto.price}}
+      </span>
+      <p><small class="card-text">Cantidad por bulto {{producto.bulto}}</small></p>
+      <h5 class="card-text">Precio: ${{producto.price*producto.bulto}}</h5>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. At odit voluptatem dolorum porro modi omnis sint assumenda facilis ex recusandae ipsa earum fuga facere necessitatibus totam eaque, deserunt dolorem minus a voluptate! Iure accusantium deleniti sit distinctio dolores obcaecati voluptate tempora non qui sapiente fuga, nam facilis hic accusamus delectus!</p>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,9 @@
+.errores {
+  margin: auto;
+  text-align: center;
+ width: 95%;
+ padding-left: 5px;
+ padding-right: 5px;
+
+ font-size: 0.9rem;
+}

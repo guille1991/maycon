@@ -1,0 +1,142 @@
+<br>
+
+<div class="row">
+  <div class="col-md-6 mb-1 mb-md-4">
+    <div class="card border-left-primary shadow h-100 py-2 ml-2 mr-2">
+      <div class="card-body">
+        <div class="row no-gutters align-items-center">
+          <div class="col mr-2">
+            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+              Te llevas</div>
+            <div class="h5 mb-0 font-weight-bold text-gray-800">{{cantidad_total}} bultos</div>
+          </div>
+          <div class="col-auto">
+            <h3><i class="bi bi-list-check"></i></h3>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6 mb-1 mb-md-4">
+    <div class="card border-left-success shadow h-100 py-2 ml-2 mr-2">
+      <div class="card-body">
+        <div class="row no-gutters align-items-center">
+          <div class="col mr-2">
+            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+              Deberas pagar</div>
+            <div class="h5 mb-0 font-weight-bold text-gray-800">$ {{costo_total}}</div>
+          </div>
+          <div class="col-auto">
+            <h3><i class="bi bi-cash"></i></h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6 mb-1 mb-md-4">
+    <div class="card border-left-info shadow h-100 py-2 ml-2 mr-2">
+      <div class="card-body">
+        <div class="row no-gutters align-items-center">
+          <div class="col mr-2">
+            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Apostaste fuerta al
+            </div>
+            <div class="row no-gutters align-items-center">
+              <div class="col-auto">
+                <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{mejor_producto?.name}}</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-auto">
+            <h3><i class="bi bi-emoji-sunglasses"></i></h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6 mb-1 mb-md-4">
+    <div class="card border-left-warning shadow h-100 py-2 ml-2 mr-2">
+      <div class="card-body">
+        <div class="row no-gutters align-items-center">
+          <div class="col mr-2">
+            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+              Fecha</div>
+            <div class="h5 mb-0 font-weight-bold text-gray-800">{{fecha}}</div>
+          </div>
+          <div class="col-auto">
+            <h3><i class="bi bi-calendar-week"></i></h3>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="errores bg-warning" *ngFor="let producto of productosSinStock">
+  <p>La cantidad a comprar de <b>{{producto}}</b> supera el stock disponible.
+    </p>
+</div>
+
+<div class="errores bg-warning" *ngIf="productosSinStock.length !== 0">
+  <p><b>De igual forma podrá confirmar la compra y se estaran comunicando con usted para informarle sobre cuando se repondrá cada producto faltante de stock.</b></p>
+
+</div>
+
+<div class="table-responsive ">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Producto</th>
+        <th scope="col">Precio unitario (bulto)</th>
+        <th scope="col">Cantidad (bultos)</th>
+        <th scope="col">Precio parcial</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let producto of lista_productos_en_carrito">
+        <th>{{producto.name}}</th>
+        <td>$ {{producto.price*producto.bulto}}</td>
+        <th>{{producto.cantidad}}</th>
+        <td>$ {{(producto.price*producto.bulto)*producto.cantidad}}</td>
+        <td>
+          <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <label class="btn btn-secondary" (click)="onClickBorrar(producto)">
+              <a type="radio" data-toggle="tooltip" data-placement="top" title="Eliminar todos bultos de este producto">
+                <i class="bi bi-trash"></i></a>
+            </label>
+            <label class="btn btn-secondary text-white" (click)="onClickQuitar(producto)">
+              <a  type="radio" data-toggle="tooltip" data-placement="top" title="Quitar un bulto"> <i
+                  style="font-size: 12x;" class="bi bi-dash"></i></a>
+            </label>
+            <label class="btn btn-success" (click)="onClickAgregar(producto)">
+              <a type="radio" data-toggle="tooltip" data-placement="top" title="Agregar un bulto"> <i
+                  class="bi bi-plus"></i></a>
+            </label>
+          </div>
+        </td>
+      </tr>
+
+      <tr style="color: green;">
+        <th>Total</th>
+        <td></td>
+        <th>{{ cantidad_total }} bultos</th>
+
+
+
+        <th>$ {{ costo_total }}</th>
+        <td>
+          <button class="btn btn-outline-success btn-outline" (click)="confirmar_compra()">Confirmar compra</button>
+        </td>
+      </tr>
+
+
+    </tbody>
+
+  </table>
+</div>
