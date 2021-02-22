@@ -88,6 +88,8 @@ export class PrincipalComponent implements OnInit {
   }
 
   onClick() {
-    window.scrollTo(0, 0);
+
+
+     window.scrollTo(0, 0);
   }
 }
