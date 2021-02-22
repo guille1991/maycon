@@ -86,4 +86,8 @@ export class PrincipalComponent implements OnInit {
   mostrar_carrito() {
     //console.log(this.carrito);
   }
+
+  onClick() {
+    window.scrollTo(0, 0);
+  }
 }

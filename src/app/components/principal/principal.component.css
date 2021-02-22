@@ -2,6 +2,10 @@
   justify-content: center;
 }
 
-.paginacion {
+
+
+.paginacion  {
   text-align:center;
+  width: 90%;
+  margin:auto;
 }
