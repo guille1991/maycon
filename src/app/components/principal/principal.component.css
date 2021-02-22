@@ -9,3 +9,7 @@
   width: 90%;
   margin:auto;
 }
+
+.card:hover {
+  border: 1px solid red;
+}

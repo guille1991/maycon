@@ -20,9 +20,9 @@
 
 <div class="row card-group ">
   <div class="d-flex p-0 flex-wrap justify-content-center col-12 col-sm-4" *ngFor="let producto of productos | paginate: { itemsPerPage: 6, currentPage: p }">
-    <div class="card mt-4 col-11">
-      <img class="card-img-top" [src]="producto.src" alt="" style="width: 100%" routerLink="/productos/{{producto.id}}">
-      <div class="card-body">
+    <div class="card mt-4 col-11" >
+      <img class="card-img-top" routerLink="/productos/{{producto.id}}" [src]="producto.src" alt="" style="width: 100%" >
+      <div class="card-body" routerLink="/productos/{{producto.id}}">
         <h4 class="card-text" style="font-weight: 600;">${{producto.price*producto.bulto}}</h4>
         <hr>
         <span style="color: white; font-size: 0.9rem;" class="badge bg-info">Precio por unidad ${{producto.price}}
