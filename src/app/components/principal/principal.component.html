@@ -18,21 +18,23 @@
 </div> -->
 
 
-<div class="row card-group ">
-  <div class="d-flex p-0 flex-wrap justify-content-center col-12 col-sm-4" *ngFor="let producto of productos | paginate: { itemsPerPage: 6, currentPage: p }">
-    <div class="card mt-4 col-11" >
+<div class="row card-group ml-1 mr-1">
+  <div class="d-flex flex-wrap justify-content-center col-6 p-0 col-sm-4" *ngFor="let producto of productos | paginate: { itemsPerPage: 6, currentPage: p }">
+    <div class="card ml-1 mr-1 mt-4 col-11 pl-0 pr-0" >
       <img class="card-img-top" routerLink="/productos/{{producto.id}}" [src]="producto.src" alt="" style="width: 100%" >
-      <div class="card-body" routerLink="/productos/{{producto.id}}">
-        <h4 class="card-text" style="font-weight: 600;">${{producto.price*producto.bulto}}</h4>
-        <hr>
-        <span style="color: white; font-size: 0.9rem;" class="badge bg-info">Precio por unidad ${{producto.price}}
-        </span>
-        <p><small class="card-text">Cantidad por bulto {{producto.bulto}}</small></p>
-        <h5 class="card-text">{{producto.name}}</h5>
+      <div class="card-body p-1 pl-2" routerLink="/productos/{{producto.id}}">
+        <p class="card-text-title text-muted m-0">{{producto.name}}</p>
+
+        <p style="color: white;" class="badge bg-info m-0">Precio por unidad ${{producto.price}}
+        </p>
+        <p><small class="card-text m-0">Cantidad por bulto {{producto.bulto}}</small></p>
+        <hr class="mt-0 mb-0">
+        <p class="card-text-precio mb-0 text-danger" >${{producto.price*producto.bulto}}</p>
+
       </div>
-      <div class="card-footer text-muted" style="text-align: center;">
-        <button type="button" class="btn btn-outline-success btn-block" (click)="agregar_producto_a_carrito(producto)">Añadir al carrito</button>
-        <button type="button" class="btn btn-outline-info btn-block" (click)="mostrar_carrito()" routerLink="/carrito">Mostrar carro</button>
+      <div class="card-footer text-muted p-0 pb-2 pl-2 pt-2 pr-2" style="text-align: center;">
+        <button type="button " class="btn  btn-outline-success btn-block" (click)="agregar_producto_a_carrito(producto)">Añadir al carrito</button>
+        <button type="button " class="btn  btn-outline-info btn-block" (click)="mostrar_carrito()" routerLink="/carrito">Mostrar carro</button>
       </div>
     </div>
   </div>

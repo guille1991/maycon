@@ -13,3 +13,43 @@
 .card:hover {
   border: 1px solid red;
 }
+
+
+.card-group > *{
+  font-size: 1rem;
+  text-align:left;
+}
+
+.btn {
+  font-size: 1rem;
+
+}
+
+.card-text-title {
+  font-size: 1.1rem;
+}
+
+.card-text-precio {
+  font-size: 1.2rem;
+  font-weight: bold;
+  font-family: "Roboto","Helvetica Neue","Arial","sans-serif";
+}
+
+
+
+/* Increase all font sizes on mobile */
+@media (max-width: 767px) {
+  .card-group > * {
+    /* default is 1rem or 16px */
+    font-size: 0.7rem;
+  }
+  .btn {
+    font-size: 0.7rem;
+  }
+  .card-text-title {
+    font-size: 0.8rem !important;
+  }
+  .card-text-precio {
+    font-size: 0.9rem;
+  }
+}
