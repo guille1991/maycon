@@ -41,15 +41,15 @@
 @media (max-width: 767px) {
   .card-group > * {
     /* default is 1rem or 16px */
-    font-size: 0.7rem;
+    font-size: 0.8rem;
   }
   .btn {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
   }
   .card-text-title {
     font-size: 0.8rem !important;
   }
   .card-text-precio {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
 }

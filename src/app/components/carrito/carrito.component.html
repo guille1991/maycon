@@ -147,15 +147,14 @@
     <div class="card ml-1 mr-1 mt-4 col-11 pl-0 pr-0" >
       <div class="card-body">
         <p class="card-text-title text-dark" style="display: inline; margin-right: 20px; font-weight: 400;">{{producto.name}}</p>
-        
-        <span style="color: white;" class="badge bg-info">{{producto.cantidad}} bulto/s
-        </span>
+
+
         <p><small class="text-info">Precio por bulto ${{producto.price*producto.bulto}}</small ></p>
-        
+
         <hr>
         <img class="card-img-top m-0" [src]="producto.src" alt="" style="width: 35%" >
 
-        
+
           <div class="btn-group btn-group-toggle" data-toggle="buttons" style="margin-left: 25px;">
             <label class="btn btn-danger" (click)="onClickBorrar(producto)">
               <a type="radio" data-toggle="tooltip" data-placement="top" title="Eliminar todos bultos de este producto">
@@ -169,9 +168,12 @@
               <a type="radio" data-toggle="tooltip" data-placement="top" title="Agregar un bulto"> <i
                   class="bi bi-plus"></i></a>
             </label>
-          </div> 
-
-
+          </div>
+          <div class="d-flex">
+          <td>$ {{(producto.price*producto.bulto)*producto.cantidad}}</td>
+          <span style="color: white;" class="badge bg-info">{{producto.cantidad}} bulto/s
+          </span>
+        </div>
         </div>
     </div>
   </div>
