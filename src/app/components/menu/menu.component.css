@@ -25,3 +25,9 @@
     pointer-events: none;
     color: #aaa;
 }
+
+.pepe{
+    display: inline;
+    color: #D12030;
+    border-radius: solid 1px blue;
+}
