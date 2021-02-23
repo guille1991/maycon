@@ -37,6 +37,7 @@ export class CarritoComponent implements OnInit {
   }
 
   verificarStockDeProducto() {
+    this.productosSinStock = [];
         this.lista_productos_en_carrito.forEach((element: any) => {
           if (element.cantidad > element.stock) {
             if (!this.productosSinStock.includes(element.name)) {
@@ -151,15 +152,27 @@ export class CarritoComponent implements OnInit {
   }
 
   onClickBorrar($event :any) {
+
     let aux: any = localStorage.getItem('carrito_maycon');
     if (aux) {
       aux = JSON.parse(aux);
       var result = aux.findIndex((x: any) => x.id ===$event.id);
       aux.splice(result, 1);
       localStorage.setItem("carrito_maycon", JSON.stringify(aux));
+
       this.verificar_existencia_carrito();
       this.obtener_mejor_producto();
+
+      this.verificarStockDeProducto();
+
+
     }
+
+
+
+
+
+
   }
 
 }
