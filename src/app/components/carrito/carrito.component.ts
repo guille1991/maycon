@@ -40,7 +40,7 @@ export class CarritoComponent implements OnInit {
         this.lista_productos_en_carrito.forEach((element: any) => {
           if (element.cantidad > element.stock) {
             if (!this.productosSinStock.includes(element.name)) {
-              console.log('no hay stock asi que se agrega ',element.name);
+              // console.log('no hay stock asi que se agrega ',element.name);
               this.productosSinStock.push(element.name);
             }
           } else {
