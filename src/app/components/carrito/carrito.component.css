@@ -58,3 +58,20 @@
 .card-group {
   justify-content: center;
 }
+
+.card-img-top {
+  width:100%;
+}
+
+.bultos {
+  font-size: 0.9rem;
+  line-height:35px;
+  width:50px;
+}
+
+.subtotal {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: red;
+  font-family: "Roboto","Helvetica Neue","Arial","sans-serif";
+}

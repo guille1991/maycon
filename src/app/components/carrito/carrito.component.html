@@ -145,35 +145,43 @@
 <div class="row card-group ml-1 mr-1">
   <div class="d-flex flex-wrap justify-content-center col-12 col-md-4 p-0 col-sm-6" *ngFor="let producto of lista_productos_en_carrito">
     <div class="card ml-1 mr-1 mt-4 col-11 pl-0 pr-0" >
-      <div class="card-body">
-        <p class="card-text-title text-dark" style="display: inline; margin-right: 20px; font-weight: 400;">{{producto.name}}</p>
-
-
-        <p><small class="text-info">Precio por bulto ${{producto.price*producto.bulto}}</small ></p>
-
-        <hr>
-        <img class="card-img-top m-0" [src]="producto.src" alt="" style="width: 35%" >
-
-
-          <div class="btn-group btn-group-toggle" data-toggle="buttons" style="margin-left: 25px;">
-            <label class="btn btn-danger" (click)="onClickBorrar(producto)">
-              <a type="radio" data-toggle="tooltip" data-placement="top" title="Eliminar todos bultos de este producto">
-                <i class="bi bi-trash"></i></a>
-            </label>
-            <label class="btn btn-secondary text-white" (click)="onClickQuitar(producto)">
-              <a  type="radio" data-toggle="tooltip" data-placement="top" title="Quitar un bulto"> <i
-                  style="font-size: 12x;" class="bi bi-dash"></i></a>
-            </label>
-            <label class="btn btn-success" (click)="onClickAgregar(producto)">
-              <a type="radio" data-toggle="tooltip" data-placement="top" title="Agregar un bulto"> <i
-                  class="bi bi-plus"></i></a>
-            </label>
+      <div class="card-body p-1">
+        <div class="d-flex">
+          <div class ="col-3 p-1">
+            <img class="card-img-top m-0" [src]="producto.src" alt="" >
           </div>
-          <div class="d-flex">
-          <td>$ {{(producto.price*producto.bulto)*producto.cantidad}}</td>
-          <span style="color: white;" class="badge bg-info">{{producto.cantidad}} bulto/s
-          </span>
+          <div  class ="col-9 p-1">
+            <p class="card-text-title text-dark" style="display: inline; margin-right: 20px; font-weight: 400;">{{producto.name}}</p>
+            <p class="mb-0"><small class="text-info ">Precio por bulto ${{producto.price*producto.bulto}}</small ></p>
+              <p class="mb-0"><small class="text-info">Cantidad por bulto {{producto.bulto}}</small ></p>
+
+
+          </div>
         </div>
+        <hr class="m-0 mb-1 ">
+          <div class="d-flex ">
+            <div class=" col-3 p-0 mb-2 mt-2">
+              <div class="subtotal" style="text-align:center">$ {{(producto.price*producto.bulto)*producto.cantidad}}</div>
+
+            </div>
+            <div class="btn-group btn-group-toggl col-9" data-toggle="buttons" >
+              <label class="btn btn-danger" (click)="onClickBorrar(producto)">
+                <a type="radio" data-toggle="tooltip" data-placement="top" title="Eliminar todos bultos de este producto">
+                  <i class="bi bi-trash"></i></a>
+              </label>
+              <label class="btn btn-secondary text-white" (click)="onClickQuitar(producto)">
+                <a  type="radio" data-toggle="tooltip" data-placement="top" title="Quitar un bulto"> <i
+                    style="font-size: 12x;" class="bi bi-dash"></i></a>
+              </label>
+              <label class="btn bultos btn-primary p-1"> {{producto.cantidad}} </label>
+
+              <label class="btn btn-success" (click)="onClickAgregar(producto)">
+                <a type="radio" data-toggle="tooltip" data-placement="top" title="Agregar un bulto"> <i
+                    class="bi bi-plus"></i></a>
+              </label>
+            </div>
+          </div>
+
         </div>
     </div>
   </div>
