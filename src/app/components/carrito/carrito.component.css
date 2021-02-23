@@ -34,7 +34,7 @@
   height:135px;
   background:white;
   color:black;
-  position: sticky;
+  position: relative;
   bottom:0;
   left:0;
   width:100%;
