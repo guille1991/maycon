@@ -8,18 +8,24 @@
       <a class="nav-link text-white" onclick="return false" routerLink="/carrito">Carrito
         <span class="badge rounded-pill bg-success text-white">{{dataService.cantidad_carrito}}</span>
       </a>
+     
+      
+      
+
   </div>
   <div class="col-md-4">
     <form>
       <div class=" has-search">
         <span class="fa fa-search form-control-feedback"></span>
-        <input style="border-radius: 2px;" type="text" class="form-control " placeholder="Qué estás buscando?">
+        <input style="border-radius: 2px;" type="text" class="form-control "  (keyup)="busca_producto($event)"  
+         placeholder="Qué estás buscando?">
       </div>
     </form>
   </div>
 
   <div class="col-md-4">
     <div class="d-flex flex-row-reverse bd-highlight">
+     
       <div class="p-2 bd-highlight">
         <i style="color: white" class="bi bi-telephone"></i> <a style="color: white">+54 9 11 85967425</a>
       </div>
