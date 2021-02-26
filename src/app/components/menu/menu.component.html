@@ -1,36 +1,29 @@
 <nav class="navbar navbar-expand-lg navbar-primary bg-primary ">
-
-
-
-  <div class="col-md-4 d-flex mb-1 mb-sm-1 ">
+  <div class="col-md-4 d-flex col-sm-12 pl-0 mb-2">
     <a routerLink="/principal"><img src="../../assets/img/logo-maycon.png"></a>
-      <a class="nav-link text-white" onclick="return false" routerLink="/principal">Productos</a>
-      <a class="nav-link text-white" onclick="return false" routerLink="/carrito">Carrito
+      <a class="nav-link text-white  mt-1" onclick="return false" routerLink="/principal">Productos</a>
+      <a class="nav-link text-white mt-1" onclick="return false" routerLink="/carrito">Carrito
         <span class="badge rounded-pill bg-success text-white">{{dataService.cantidad_carrito}}</span>
       </a>
-     
-      
-      
-
   </div>
-  <div class="col-md-4">
+  <div class="col-md-4 col-sm-12">
     <form>
       <div class=" has-search">
         <span class="fa fa-search form-control-feedback"></span>
-        <input style="border-radius: 2px;" type="text" class="form-control "  (keyup)="busca_producto($event)"  
+        <input style="border-radius: 2px;" type="text" class="form-control "  (keyup)="busca_producto($event)"
          placeholder="Qué estás buscando?">
       </div>
     </form>
   </div>
 
-  <div class="col-md-4">
-    <div class="d-flex flex-row-reverse bd-highlight">
-     
-      <div class="p-2 bd-highlight">
+  <div class="col-md-4 col-sm-12">
+    <div class="d-flex flex-row-reverse bd-highlight  justify-content-center">
+
+      <div class="p-2 bd-highlight mt-1 d-md-block d-none">
         <i style="color: white" class="bi bi-telephone"></i> <a style="color: white">+54 9 11 85967425</a>
       </div>
-      <div class="p-2 bd-highlight">
-        <i style="color: white" class="bi bi-person"></i><a style="color: white">Usuario</a>
+      <div class="p-2 bd-highlight mt-1 d-md-block d-none">
+        <i style="color: white" class="bi bi-person"></i><a style="color: white">Iniciar sesión</a>
       </div>
     </div>
   </div>
