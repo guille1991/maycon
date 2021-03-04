@@ -192,7 +192,7 @@
  <p class="mb-0">Con una compra superior a los <b>{{siguienteDescuento}} mil pesos obtenés {{descuento +10}}% de descuento. </b>
 </p>
   </div>
-  <div class="errores bg-success mt-1">
+  <div class="errores bg-success mt-1" *ngIf="descuento>0">
     <p class="mb-0">Actualmente tiene un descuento de <b>${{costoDescontado}} pesos ({{descuento}}% de descuento).</b></p>
 
   </div>
