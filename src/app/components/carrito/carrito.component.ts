@@ -12,6 +12,9 @@ export class CarritoComponent implements OnInit {
   value2: number;
   lista_productos_en_carrito: any;
   costo_total : number;
+  descuento : number;
+  siguienteDescuento : number;
+  costoDescontado: number;
   cantidad_total : number;
   fecha: string;
   mejor_producto : any;
@@ -31,8 +34,27 @@ export class CarritoComponent implements OnInit {
     this.fecha = this.obtener_fecha();
 
     this.verificarStockDeProducto();
+    this.controlarDescuento();
 
 
+  }
+
+  controlarDescuento() {
+
+    if (this.costo_total < 10000) {
+      this.siguienteDescuento = 10000;
+      this.descuento = 0;
+      this.costoDescontado = 0;
+    } else if (this.costo_total < 20000) {
+      this.siguienteDescuento = 20000;
+      this.descuento = 10;
+    } else if (this.costo_total < 30000) {
+      this.siguienteDescuento = 30000;
+      this.descuento = 20;
+    }
+    if (this.descuento != 0) {
+      this.costoDescontado = this.costo_total/this.descuento;
+    }
 
   }
 
@@ -132,6 +154,7 @@ export class CarritoComponent implements OnInit {
           this.verificar_existencia_carrito();
           this.obtener_mejor_producto();
           this.verificarStockDeProducto();
+          this.controlarDescuento();
         } else {
           this.onClickBorrar($event);
         }
@@ -148,6 +171,7 @@ export class CarritoComponent implements OnInit {
         this.verificar_existencia_carrito();
         this.obtener_mejor_producto();
         this.verificarStockDeProducto();
+        this.controlarDescuento();
     }
   }
 
@@ -164,6 +188,7 @@ export class CarritoComponent implements OnInit {
       this.obtener_mejor_producto();
 
       this.verificarStockDeProducto();
+      this.controlarDescuento();
 
 
     }

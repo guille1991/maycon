@@ -188,12 +188,22 @@
         </div>
     </div>
   </div>
+  <div class="errores bg-success">
+ <p class="mb-0">Con una compra superior a los <b>{{siguienteDescuento}} mil pesos obtenés {{descuento +10}}% de descuento. </b>
+</p>
+  </div>
+  <div class="errores bg-success mt-1">
+    <p class="mb-0">Actualmente tiene un descuento de <b>${{costoDescontado}} pesos ({{descuento}}% de descuento).</b></p>
+
+  </div>
+
 </div>
 
 <div class="compra_footer">
   <div class="container">
     <hr>
-    <p>Precio final: ${{costo_total}}</p>
+    <p>Precio final: ${{(costo_total-(costoDescontado))}}</p>
+
     <button class="btn btn-success btn-block"  (click)="confirmar_compra()">Finalizar compra</button>
   </div>
 </div>
