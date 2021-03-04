@@ -189,11 +189,11 @@
     </div>
   </div>
   <div class="errores bg-success" *ngIf="descuento<20">
- <p class="mb-0">Con una compra superior a los <b>{{siguienteDescuento}} mil pesos obtenés {{descuento +10}}% de descuento. </b>
+ <p class="mb-0">Con una compra superior a <b>${{siguienteDescuento}} obtenés {{descuento +10}}% de descuento. </b>
 </p>
   </div>
   <div class="errores bg-success mt-1" *ngIf="descuento>0">
-    <p class="mb-0">Actualmente tiene un descuento de <b>${{costoDescontado}} pesos ({{descuento}}% de descuento).</b></p>
+    <p class="mb-0">Actualmente tiene un descuento de <b>${{costoDescontado}} ({{descuento}}% de descuento).</b></p>
 
   </div>
 
