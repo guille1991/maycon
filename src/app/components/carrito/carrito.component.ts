@@ -53,7 +53,7 @@ export class CarritoComponent implements OnInit {
       this.descuento = 20;
     }
     if (this.descuento != 0) {
-      this.costoDescontado = this.costo_total/this.descuento;
+      this.costoDescontado = Math.round(this.costo_total/this.descuento);
     }
 
   }
