@@ -10,6 +10,8 @@ import { PieComponent } from './components/pie/pie.component';
 import { CarritoComponent } from './components/carrito/carrito.component';
 import { ProductoComponent } from './components/producto/producto.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { PerfilComponent } from './components/usuario/perfil/perfil.component';
+import { ComprasComponent } from './components/usuario/compras/compras.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { NgxPaginationModule } from 'ngx-pagination';
     PrincipalComponent,
     PieComponent,
     CarritoComponent,
-    ProductoComponent
+    ProductoComponent,
+    PerfilComponent,
+    ComprasComponent
   ],
   imports: [
     BrowserModule,
