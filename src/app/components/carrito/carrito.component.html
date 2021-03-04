@@ -188,7 +188,7 @@
         </div>
     </div>
   </div>
-  <div class="errores bg-success">
+  <div class="errores bg-success" *ngif="descuento<=20">
  <p class="mb-0">Con una compra superior a los <b>{{siguienteDescuento}} mil pesos obtenés {{descuento +10}}% de descuento. </b>
 </p>
   </div>
