@@ -13,10 +13,8 @@ export class AppComponent {
   constructor(public router: Router) {
 
   }
-  
+
   onActivate(event: any) {
     window.scroll(0,0);
 }
 }
-
-
