@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,11 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Maycon - Venta online';
 
+
+  constructor(public router: Router) {
+
+  }
+  
   onActivate(event: any) {
     window.scroll(0,0);
 }
