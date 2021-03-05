@@ -18,8 +18,8 @@ export class CarritoComponent implements OnInit {
   cantidad_total : number;
   fecha: string;
   mejor_producto : any;
-
   productosSinStock: string[];
+  
 
   constructor(private dataService: DataService) {
     this.productosSinStock = [];
@@ -27,6 +27,7 @@ export class CarritoComponent implements OnInit {
 
   ngOnInit(): void {
 
+    
     this.verificar_existencia_carrito();
     if(this.dataService.cantidad_carrito > 0){
       this.obtener_mejor_producto();
@@ -40,7 +41,6 @@ export class CarritoComponent implements OnInit {
   }
 
   controlarDescuento() {
-
     if (this.costo_total < 10000) {
       this.siguienteDescuento = 10000;
       this.descuento = 0;

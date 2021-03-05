@@ -1,7 +1,8 @@
 <div class="container">
   <h3 class="mt-3" id="title"> Carrito</h3>
-    <p>Estos son los productos que tienes en el carro actualemente <button type="button" class="btn btn-light btn-sm" routerLink="/principal">Agregar más</button></p>
-    <hr>
+  <p>Estos son los productos que tienes en el carro actualemente <button type="button" class="btn btn-light btn-sm"
+      routerLink="/principal">Agregar más</button></p>
+  <hr>
 </div>
 <div class="row mb-1 mt-3">
   <div class="col-md-6 mb-1 mb-md-4">
@@ -81,11 +82,12 @@
 
 <div class="errores bg-warning" *ngFor="let producto of productosSinStock">
   <p>La cantidad a comprar de <b>{{producto}}</b> supera el stock disponible.
-    </p>
+  </p>
 </div>
 
 <div class="errores bg-warning" *ngIf="productosSinStock.length !== 0">
-  <p><b>De igual forma podrá confirmar la compra y se estaran comunicando con usted para informarle sobre cuando se repondrá cada producto faltante de stock de su carrito.</b></p>
+  <p><b>De igual forma podrá confirmar la compra y se estaran comunicando con usted para informarle sobre cuando se
+      repondrá cada producto faltante de stock de su carrito.</b></p>
 
 </div>
 
@@ -146,51 +148,54 @@
 
 
 <div class="row card-group ml-1 mr-1">
-  <div class="d-flex flex-wrap justify-content-center col-12 col-md-4 p-0 col-sm-6" *ngFor="let producto of lista_productos_en_carrito">
-    <div class="card ml-0 mr-0 mb-2 mt-0 col-11 pl-0 pr-0" >
+  <div class="d-flex flex-wrap justify-content-center col-12 col-md-4 p-0 col-sm-6"
+    *ngFor="let producto of lista_productos_en_carrito">
+    <div class="card ml-0 mr-0 mb-2 mt-0 col-11 pl-0 pr-0">
       <div class="card-body p-1">
         <div class="d-flex">
-          <div class ="col-3 p-1">
-            <img class="card-img-top m-0" [src]="producto.src" alt="" >
+          <div class="col-3 p-1">
+            <img class="card-img-top m-0" [src]="producto.src" alt="">
           </div>
-          <div  class ="col-9 p-1">
-            <p class="card-text-title text-dark" style="display: inline; margin-right: 20px; font-weight: 400;">{{producto.name}}</p>
-            <p class="mb-0"><small class="text-info ">Precio por bulto ${{producto.price*producto.bulto}}</small ></p>
-              <p class="mb-0"><small class="text-info">Cantidad por bulto {{producto.bulto}}</small ></p>
+          <div class="col-9 p-1">
+            <p class="card-text-title text-dark" style="display: inline; margin-right: 20px; font-weight: 400;">
+              {{producto.name}}</p>
+            <p class="mb-0"><small class="text-info ">Precio por bulto ${{producto.price*producto.bulto}}</small></p>
+            <p class="mb-0"><small class="text-info">Cantidad por bulto {{producto.bulto}}</small></p>
 
 
           </div>
         </div>
         <hr class="m-0 mb-3 ">
-          <div class="d-flex ">
-            <div class=" col-3 p-0 mb-2 mt-2">
-              <div class="subtotal" style="text-align:center">$ {{(producto.price*producto.bulto)*producto.cantidad}}</div>
-
+        <div class="d-flex ">
+          <div class=" col-3 p-0 mb-2 mt-2">
+            <div class="subtotal" style="text-align:center">$ {{(producto.price*producto.bulto)*producto.cantidad}}
             </div>
-            <div class="btn-group btn-group-toggl col-9" data-toggle="buttons" >
-              <label class="btn btn-danger" (click)="onClickBorrar(producto)">
-                <a type="radio" data-toggle="tooltip" data-placement="top" title="Eliminar todos bultos de este producto">
-                  <i class="bi bi-trash"></i></a>
-              </label>
-              <label class="btn btn-secondary text-white" (click)="onClickQuitar(producto)">
-                <a  type="radio" data-toggle="tooltip" data-placement="top" title="Quitar un bulto"> <i
-                    style="font-size: 12x;" class="bi bi-dash"></i></a>
-              </label>
-              <label class="btn bultos btn-primary p-1"> {{producto.cantidad}} </label>
 
-              <label class="btn btn-success" (click)="onClickAgregar(producto)">
-                <a type="radio" data-toggle="tooltip" data-placement="top" title="Agregar un bulto"> <i
-                    class="bi bi-plus"></i></a>
-              </label>
-            </div>
           </div>
+          <div class="btn-group btn-group-toggl col-9" data-toggle="buttons">
+            <label class="btn btn-danger" (click)="onClickBorrar(producto)">
+              <a type="radio" data-toggle="tooltip" data-placement="top" title="Eliminar todos bultos de este producto">
+                <i class="bi bi-trash"></i></a>
+            </label>
+            <label class="btn btn-secondary text-white" (click)="onClickQuitar(producto)">
+              <a type="radio" data-toggle="tooltip" data-placement="top" title="Quitar un bulto"> <i
+                  style="font-size: 12x;" class="bi bi-dash"></i></a>
+            </label>
+            <label class="btn bultos btn-primary p-1"> {{producto.cantidad}} </label>
 
+            <label class="btn btn-success" (click)="onClickAgregar(producto)">
+              <a type="radio" data-toggle="tooltip" data-placement="top" title="Agregar un bulto"> <i
+                  class="bi bi-plus"></i></a>
+            </label>
+          </div>
         </div>
+
+      </div>
     </div>
   </div>
   <div class="errores bg-success" *ngIf="descuento<20">
- <p class="mb-0">Con una compra superior a <b>${{siguienteDescuento}} obtenés {{descuento +10}}% de descuento. </b>
-</p>
+    <p class="mb-0">Con una compra superior a <b>${{siguienteDescuento}} obtenés {{descuento +10}}% de descuento. </b>
+    </p>
   </div>
   <div class="errores bg-success mt-1" *ngIf="descuento>0">
     <p class="mb-0">Actualmente tiene un descuento de <b>${{costoDescontado}} ({{descuento}}% de descuento).</b></p>
@@ -204,6 +209,6 @@
     <hr>
     <p>Precio final: ${{(costo_total-(costoDescontado))}}</p>
 
-    <button class="btn btn-success btn-block"  (click)="confirmar_compra()">Finalizar compra</button>
+    <button class="btn btn-success btn-block" (click)="confirmar_compra()">Finalizar compra</button>
   </div>
 </div>

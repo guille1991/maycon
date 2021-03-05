@@ -8,6 +8,8 @@ export class DataService {
 
   cantidad_carrito: number = 0;
   productos: Producto[];
+  productos_oferta : Producto[];
+
   constructor() {
     this.productos = [
       {
@@ -119,10 +121,33 @@ export class DataService {
       }
     ];
 
+    this.productos_oferta = [
+      {
+        id: 14,
+        src: 'assets/img/productos/javon.jpg',
+        name: 'Javon ropa zorro',
+        price: 284,
+        bulto: 6,
+        stock: 4,
+      },
+      {
+        id: 15,
+        src: 'assets/img/productos/fideo.jpg',
+        name: 'Fideos San Agustin 500G',
+        price: 45,
+        bulto: 25,
+        stock: 3,
+      }
+    ];
+
    }
 
    public getAll(){
      return this.productos;
    }
+
+   public getAll_ofertas(){
+    return this.productos_oferta;
+  }
 
 }

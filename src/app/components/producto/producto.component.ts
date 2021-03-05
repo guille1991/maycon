@@ -21,13 +21,16 @@ export class ProductoComponent implements OnInit {
       this.productoId = params.productoId;
     });
 
+    
+
     let arrProductos: Producto[] = this.dataService.getAll();
+    arrProductos = arrProductos.concat(this.dataService.productos_oferta); 
     let aux = arrProductos.filter(obj => {
       return obj.id == this.productoId;
     });
     this.producto = aux[0];
 
-    console.log(this.dataService.cantidad_carrito);
+    /* console.log(this.dataService.cantidad_carrito); */
 
 
   }

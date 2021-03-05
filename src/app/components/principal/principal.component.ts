@@ -40,8 +40,6 @@ export class PrincipalComponent implements OnInit {
     }
   }
 
-
-
   //Funcion en repacion llevaria otras comprobaciones, mejorando
   agregar_producto_a_carrito(producto: any) {
     let contador_no_existe = 0;

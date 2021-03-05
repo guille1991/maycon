@@ -12,6 +12,7 @@ import { ProductoComponent } from './components/producto/producto.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { PerfilComponent } from './components/usuario/perfil/perfil.component';
 import { ComprasComponent } from './components/usuario/compras/compras.component';
+import { OfertaComponent } from './components/producto/oferta/oferta.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ComprasComponent } from './components/usuario/compras/compras.component
     CarritoComponent,
     ProductoComponent,
     PerfilComponent,
-    ComprasComponent
+    ComprasComponent,
+    OfertaComponent
   ],
   imports: [
     BrowserModule,
